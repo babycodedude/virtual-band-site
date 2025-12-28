@@ -7,7 +7,7 @@ window.VB_MEDIA = {
       date: "2025-12-24"
     },
     {
-      title: "YouTube — Angus - (Album Track)",
+      title: "YouTube — Leo - (Album Track)",
       url: "https://www.youtube.com/watch?v=5Mm1P3t_B_E",
       date: "2025-12-24"
     }
