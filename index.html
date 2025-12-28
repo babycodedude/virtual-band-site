@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIRTUAL BAND — FRONT PAGE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__left">
+      <h1 class="brand">VIRTUAL BAND</h1>
+      <p class="subtitle">Independent Archive / Sound Unit</p>
+    </div>
+    <div class="masthead__right">
+      <button class="btn" data-action="sys:boot">BOOT</button>
+      <button class="btn" data-action="sys:diag">DIAGNOSTIC</button>
+      <button class="btn" data-action="sys:random">MESSAGE</button>
+    </div>
+  </header>
+
+  <main class="front-page">
+    <section class="block">
+      <h2 class="kicker">STATEMENT</h2>
+      <p class="lede">
+        This site is an archive-first interface: read, listen, and collect fragments.
+        No feed. No noise. Only entries.
+      </p>
+      <div class="btnrow">
+        <button class="btn" data-action="open-article" data-id="statement">READ</button>
+        <button class="btn" data-action="sys:seal">SEAL</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="kicker">LATEST</h2>
+      <ul id="latest-list" class="list"></ul>
+      <div class="btnrow">
+        <button class="btn" data-action="open-archive">ARCHIVE</button>
+        <button class="btn" data-action="sys:signal">SIGNAL</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="kicker">MEDIA</h2>
+      <p class="lede">Minimal links. External opens in a new tab.</p>
+      <div class="btnrow">
+        <button class="btn" data-action="open-media">OPEN</button>
+        <button class="btn" data-action="sys:radio">RADIO</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="kicker">CONTROL PANEL</h2>
+      <p class="lede">Only buttons. Everything is deliberate.</p>
+      <div class="grid">
+        <button class="btn btn--wide" data-action="sys:press">PRESS</button>
+        <button class="btn btn--wide" data-action="sys:release">RELEASE</button>
+        <button class="btn btn--wide" data-action="sys:inventory">INVENTORY</button>
+        <button class="btn btn--wide" data-action="sys:map">MAP</button>
+        <button class="btn btn--wide" data-action="sys:credits">CREDITS</button>
+        <button class="btn btn--wide" data-action="sys:clear">CLEAR LOG</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__left">© Virtual Band Archive</div>
+    <div class="footer__right">
+      <button class="btn btn--ghost" data-action="sys:time">TIME</button>
+      <button class="btn btn--ghost" data-action="sys:hash">HASH</button>
+    </div>
+  </footer>
+
+  <!-- Overlays -->
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <div class="overlay__card">
+      <div class="overlay__head">
+        <div id="overlay-title" class="overlay__title">PANEL</div>
+        <button class="btn btn--ghost" data-action="close-overlay">CLOSE</button>
+      </div>
+      <div id="overlay-body" class="overlay__body"></div>
+      <div class="overlay__foot">
+        <button class="btn" data-action="sys:random">MESSAGE</button>
+        <button class="btn" data-action="close-overlay">BACK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Console -->
+  <aside class="console" aria-label="system console">
+    <div class="console__head">
+      <div class="console__title">SYSTEM LOG</div>
+      <div class="console__actions">
+        <button class="btn btn--ghost" data-action="sys:clear">CLEAR</button>
+      </div>
+    </div>
+    <div id="console-log" class="console__log"></div>
+  </aside>
+
+  <script src="content/articles.js"></script>
+  <script src="content/media.js"></script>
+  <script src="content/system_messages.js"></script>
+  <script src="assets/js/ui.js"></script>
+</body>
+</html>
