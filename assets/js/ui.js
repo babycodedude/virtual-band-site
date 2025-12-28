@@ -275,25 +275,22 @@
   log('READY.');
   sysMessage('boot');
 
-})();// --- Background audio (auto loop after first user interaction) ---
+})();// --- Background audio: auto loop after first user interaction ---
 (function () {
   const bgAudio = new Audio("assets/media/audio/test_loop.m4a");
   bgAudio.loop = true;
-  bgAudio.volume = 0.8; // 可調 0.0 ~ 1.0
+  bgAudio.volume = 0.8;
 
   let started = false;
 
   function startAudioOnce() {
     if (started) return;
     started = true;
-    bgAudio.play().catch(() => {
-      // play 可能被瀏覽器擋，忽略即可
-    });
+    bgAudio.play().catch(() => {});
     document.removeEventListener("click", startAudioOnce);
     document.removeEventListener("keydown", startAudioOnce);
   }
 
-  // 等任意互動後才開始（符合瀏覽器政策）
   document.addEventListener("click", startAudioOnce);
   document.addEventListener("keydown", startAudioOnce);
 })();
